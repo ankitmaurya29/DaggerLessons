@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import com.example.daggerlessons.di.DaggerCarComponent
 import com.example.daggerlessons.di.DaggerRoadComponent
-import com.example.daggerlessons.di.Road
+import com.example.daggerlessons.model.Road
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {

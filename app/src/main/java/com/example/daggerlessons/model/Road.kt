@@ -1,4 +1,4 @@
-package com.example.daggerlessons.di
+package com.example.daggerlessons.model
 
 import android.util.Log
 import javax.inject.Inject

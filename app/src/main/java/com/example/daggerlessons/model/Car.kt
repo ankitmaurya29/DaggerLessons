@@ -1,7 +1,6 @@
 package com.example.daggerlessons.model
 
 import android.util.Log
-import com.example.daggerlessons.di.Road
 import com.example.daggerlessons.thirdParty.Tyres
 import javax.inject.Inject
 /*
