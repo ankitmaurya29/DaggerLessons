@@ -9,7 +9,7 @@ import dagger.Component
     Even though Dagger knows how to create Engine, Creating Engine is not exposed to
     DaggerCarComponent client.
  */
-@Component(modules = [TyresModule::class, BodyModule::class])
+@Component(modules = [TyresModule::class, BodyModule::class, CylindersModule::class])
 interface CarComponent {
     fun getCar() : Car
 }
