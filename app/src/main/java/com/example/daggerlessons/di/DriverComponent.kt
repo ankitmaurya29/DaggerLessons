@@ -3,6 +3,7 @@ package com.example.daggerlessons.di
 import com.example.daggerlessons.model.Driver
 import dagger.BindsInstance
 import dagger.Component
+import javax.inject.Named
 
 @Component
 interface DriverComponent {
@@ -12,7 +13,10 @@ interface DriverComponent {
     interface Builder{
         @BindsInstance
         //Whenever any one this component needs string then pass this
-        fun setDriverName(name: String): Builder
+        fun setDriverName(@Named("driver name")name: String): Builder
+
+        @BindsInstance
+        fun setCountryName(@Named("country name")name: String): Builder
         fun build() : DriverComponent
     }
 }

@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         /*
             Getting driver by passing name dynamically, through the use of @Component.Builder and @BindsInstance
          */
-        val driver = DaggerDriverComponent.builder().setDriverName("Max Hamilton").build().getDriver()
+        val driver = DaggerDriverComponent.builder().setDriverName("Max Hamilton").setCountryName("Belium UK").build().getDriver()
         Log.d(TAG, "Car driven by ${driver.name} [${driver}]")
     }
 }
