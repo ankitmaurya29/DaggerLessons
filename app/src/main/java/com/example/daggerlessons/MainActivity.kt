@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.util.Log
 import com.example.daggerlessons.di.CylindersModule
 import com.example.daggerlessons.di.DaggerCarComponent
+import com.example.daggerlessons.di.DaggerDriverComponent
 import com.example.daggerlessons.di.DaggerRoadComponent
-import com.example.daggerlessons.di.TyresModule
 import com.example.daggerlessons.model.Road
 import javax.inject.Inject
 
@@ -33,5 +33,12 @@ class MainActivity : AppCompatActivity() {
         //and method injection happens automatically. But MainActivity is not created by us
         //hence this is workaround to manually call the injection.
         Log.d(TAG, "Created car: $carObj")
+
+
+        /*
+            Getting driver by passing name dynamically, through the use of @Component.Builder and @BindsInstance
+         */
+        val driver = DaggerDriverComponent.builder().setDriverName("Max Hamilton").build().getDriver()
+        Log.d(TAG, "Car driven by ${driver.name} [${driver}]")
     }
 }
