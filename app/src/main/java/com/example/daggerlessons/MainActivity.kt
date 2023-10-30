@@ -25,14 +25,18 @@ class MainActivity : AppCompatActivity() {
 
         //Since we have added a  module CylindersModule with a constructor, we need to pass the
         //module object and invoke build().
-        val component = DaggerCarComponent.builder().cylindersModule(CylindersModule(12))
-        val carObj = component.build().getCar()
+        val component = DaggerCarComponent.builder().cylindersModule(CylindersModule(12)).build()
+        val carObj = component.getCar()
+        val carObj2 = component.getCar()
+        Log.d(TAG, "Created car: $carObj.")
+
+
         DaggerRoadComponent.create().inject(this);//this performs field injection.
         //This is needed in this case and not needed in the case of field injection of
         //Engine class, becuase, when we perform constructor injection, then field injection
         //and method injection happens automatically. But MainActivity is not created by us
         //hence this is workaround to manually call the injection.
-        Log.d(TAG, "Created car: $carObj")
+
 
 
         /*
