@@ -37,7 +37,9 @@ class MainActivity : AppCompatActivity() {
         //and method injection happens automatically. But MainActivity is not created by us
         //hence this is workaround to manually call the injection.
 
-
+        val road1 = (application as MainApplicaton).roadComponent.createRoad()
+        val road2 = (application as MainApplicaton).roadComponent.createRoad()
+        Log.d(TAG, "Creating 2 roads via application component: $road1 $road2")
 
         /*
             Getting driver by passing name dynamically, through the use of @Component.Builder and @BindsInstance
