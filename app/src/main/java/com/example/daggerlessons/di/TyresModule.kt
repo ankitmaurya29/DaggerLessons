@@ -7,6 +7,7 @@ import dagger.Provides
 @Module
 class TyresModule {
     @Provides
+    @ActivityScope
     fun getTyres(): Tyres{
         return Tyres();
     }

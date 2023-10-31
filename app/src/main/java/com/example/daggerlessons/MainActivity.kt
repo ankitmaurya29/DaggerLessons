@@ -25,10 +25,13 @@ class MainActivity : AppCompatActivity() {
 
         //Since we have added a  module CylindersModule with a constructor, we need to pass the
         //module object and invoke build().
-        val component = DaggerCarComponent.builder().cylindersModule(CylindersModule(12)).build()
+        val component = DaggerCarComponent.builder()
+            .roadComponent((application as MainApplicaton).roadComponent)
+            .cylindersModule(CylindersModule(12)).build()
         val carObj = component.getCar()
         val carObj2 = component.getCar()
         Log.d(TAG, "Created car: $carObj.")
+        Log.d(TAG, "car1.tyre: ${carObj.tyre}, car2.tyre: ${carObj2.tyre}")
 
 
         DaggerRoadComponent.create().inject(this);//this performs field injection.

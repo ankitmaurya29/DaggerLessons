@@ -10,8 +10,12 @@ import javax.inject.Singleton
     Even though Dagger knows how to create Engine, Creating Engine is not exposed to
     DaggerCarComponent client.
  */
-@Singleton
-@Component(modules = [TyresModule::class, BodyModule::class, CylindersModule::class])
+@ActivityScope
+@Component(dependencies = [RoadComponent::class], modules = [TyresModule::class, BodyModule::class, CylindersModule::class])
+/*
+this component is dependent on RoadComponent which is initialised at applicaton class. We need to set the
+component when creating CarComponent.
+ */
 interface CarComponent {
     fun getCar() : Car
 }
