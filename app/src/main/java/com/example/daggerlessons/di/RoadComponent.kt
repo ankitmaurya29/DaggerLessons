@@ -10,4 +10,6 @@ import javax.inject.Singleton
 interface RoadComponent {
     fun createRoad() : Road
     fun inject(mainActivity: MainActivity);
+
+    fun getCarSubComponent(cylindersModule: CylindersModule): CarSubComponent
 }

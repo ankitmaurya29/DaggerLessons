@@ -49,5 +49,10 @@ class MainActivity : AppCompatActivity() {
          */
         val driver = DaggerDriverComponent.builder().setDriverName("Max Hamilton").setCountryName("Belium UK").build().getDriver()
         Log.d(TAG, "Car driven by ${driver.name} [${driver}]")
+
+
+        /* using carSubComponent via road component*/
+        val carViaSubComponent = (application as MainApplicaton).roadComponent.getCarSubComponent(CylindersModule(6)).getCar()
+        Log.d(TAG, "Car created via subcomponent: $carViaSubComponent")
     }
 }
